@@ -1,0 +1,80 @@
+[
+  {
+    "name": "David Krénar",
+    "email": "dk@dct.cleaning",
+    "password": "davidkrenar",
+    "role": "admin",
+    "position": "Software Specialist",
+    "phone": "+420123456789",
+    "country": "Czech Republic",
+    "description": "",
+    "profile": "a1.jpg",
+    "createdAt": "2025-01-01T00:00:00.000Z",
+    "updatedAt": "2025-01-01T00:00:00.000Z"
+  },
+  {
+    "name": "David Novotný",
+    "email": "dn@dct.cleaning",
+    "password": "davidnovotny",
+    "role": "admin",
+    "position": "Software Specialist",
+    "phone": "+420123456789",
+    "country": "Czech Republic",
+    "description": "",
+    "profile": "a2.jpg",
+    "createdAt": "2025-01-01T00:00:00.000Z",
+    "updatedAt": "2025-01-01T00:00:00.000Z"
+  },
+  {
+    "name": "Pavel Henček",
+    "email": "ph@dct.cleaning",
+    "password": "pavelhencek",
+    "role": "service",
+    "position": "Service Technician",
+    "phone": "+420123456789",
+    "country": "Czech Republic",
+    "description": "",
+    "profile": "a3.jpg",
+    "createdAt": "2025-01-01T00:00:00.000Z",
+    "updatedAt": "2025-01-01T00:00:00.000Z"
+  },
+  {
+    "name": "Jiří Urban",
+    "email": "ju@dct.cleaning",
+    "password": "jiriurban",
+    "role": "manager",
+    "position": "Technical Sales Manager",
+    "phone": "+420123456789",
+    "country": "Czech Republic",
+    "description": "",
+    "profile": "a4.jpg",
+    "createdAt": "2025-01-01T00:00:00.000Z",
+    "updatedAt": "2025-01-01T00:00:00.000Z"
+  },
+  {
+    "name": "Leo Wang",
+    "email": "leowang@hi-glory.com",
+    "password": "leowang",
+    "role": "distributor",
+    "position": "DCT Distributor",
+    "phone": "+420123456789",
+    "country": ["Taiwan", "China"],
+    "description": "",
+    "profile": "a5.jpg",
+    "createdAt": "2025-01-01T00:00:00.000Z",
+    "updatedAt": "2025-01-01T00:00:00.000Z"
+  },
+  {
+    "name": "Gábor Pesti",
+    "email": "gp@dct.cleaning",
+    "password": "gaborpesti",
+    "role": "distributor",
+    "position": "Technical Sales Manager",
+    "phone": "+420123456789",
+    "country": "Hungary",
+    "description": "",
+    "profile": "a6.jpg",
+    "createdAt": "2025-01-01T00:00:00.000Z",
+    "updatedAt": "2025-01-01T00:00:00.000Z"
+  }
+]

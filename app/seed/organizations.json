@@ -1,0 +1,53 @@
+[
+  {
+    "title": "DCT Czech s.r.o.",
+    "info": "Kompletní mycí řešení pro elektrotechnický průmysl",
+    "description": "Vyvíjíme kompletní mycí ...",
+    "web": "https://dct.cleaning/cs/",
+    "contact": "info@dct.cleaning",
+    "country": "Czech Republic",
+    "location": {
+      "street": "Havlíčkova 18",
+      "city": "Boskovice",
+      "state": "CZ",
+      "zipcode": "68001"
+    },
+    "logo": "logo1.jpg",
+    "createdAt": "2025-01-01T00:00:00.000Z",
+    "updatedAt": "2025-01-01T00:00:00.000Z"
+  },
+  {
+    "title": "HI-GLORY TECHNOLOGY CO., LTD",
+    "info": "",
+    "description": "",
+    "web": "https://www.hi-glory.com/",
+    "contact": "info@hi-glory.com",
+    "country": "Taiwan",
+    "location": {
+      "street": "No. 7-6 Luxin Street ",
+      "city": "Taoyuan",
+      "state": "Luzhu Dist",
+      "zipcode": ""
+    },
+    "logo": "logo2.jpg",
+    "createdAt": "2025-01-01T00:00:00.000Z",
+    "updatedAt": "2025-01-01T00:00:00.000Z"
+  },
+  {
+    "title": "Raytheon Technologies",
+    "info": "",
+    "description": "",
+    "web": "https://www.rtx.com/raytheon",
+    "contact": "",
+    "country": "United States of America",
+    "location": {
+      "street": "1000 Wilson Blvd.",
+      "city": "Arlington",
+      "state": "VA",
+      "zipcode": "22209"
+    },
+    "logo": "logo3.jpg",
+    "createdAt": "2025-01-01T00:00:00.000Z",
+    "updatedAt": "2025-01-01T00:00:00.000Z"
+  }
+]

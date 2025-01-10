@@ -1,0 +1,72 @@
+[
+  {
+    "machineSerialNumber": "000-000000-913",
+    "machineType": "388 CRD",
+    "machineCycleInfo": {
+      "cleanTimeSet": 60,
+      "cleanTempSet": 45,
+      "rinseTimeSet": 180,
+      "rinseTempSet": 40,
+      "rinseConductivitySetMin": 10,
+      "rinseConductivitySetMax": 50,
+      "dryTimeSet": 600
+    },
+    "machineAlarmLog": [
+      {
+        "message": "Low clean fluid level",
+        "alarmCreated": "2025-01-01T06:32:17.000Z",
+        "alarmSolved": "2025-01-01T07:05:54.000Z"
+      },
+      {
+        "message": "High dry temperature",
+        "alarmCreated": "2025-01-01T09:32:17.000Z",
+        "alarmSolved": "2025-01-01T13:05:54.000Z"
+      }
+    ],
+    "createdAt": "2025-01-01T00:00:00.000Z",
+    "updatedAt": "2025-01-01T00:00:00.000Z"
+  },
+  {
+    "machineSerialNumber": "111-111111-865",
+    "machineType": "388 CRD 2PR",
+    "machineCycleInfo": {
+      "cleanTimeSet": 120,
+      "cleanTempSet": 30,
+      "rinseTimeSet": 240,
+      "rinseTempSet": 25,
+      "rinseConductivitySetMin": 20,
+      "rinseConductivitySetMax": 40,
+      "dryTimeSet": 1200
+    },
+    "machineAlarmLog": [],
+    "createdAt": "2025-01-01T00:00:00.000Z",
+    "updatedAt": "2025-01-01T00:00:00.000Z"
+  },
+  {
+    "machineSerialNumber": "222-222222-879",
+    "machineType": "888 CRD",
+    "machineCycleInfo": {
+      "cleanTimeSet": 400,
+      "cleanTempSet": 45,
+      "rinseTimeSet": 240,
+      "rinseTempSet": 30,
+      "rinseConductivitySetMin": 5,
+      "rinseConductivitySetMax": 10,
+      "dryTimeSet": 600
+    },
+    "machineAlarmLog": [
+      {
+        "message": "Low rinse fluid level",
+        "alarmCreated": "2025-01-01T06:15:13.000Z",
+        "alarmSolved": "2025-01-01T06:23:54.000Z"
+      },
+      {
+        "message": "High dry temperature",
+        "alarmCreated": "2025-01-01T11:30:26.000Z",
+        "alarmSolved": "2025-01-01T12:18:34.000Z"
+      }
+    ],
+    "createdAt": "2025-01-01T00:00:00.000Z",
+    "updatedAt": "2025-01-01T00:00:00.000Z"
+  }
+]

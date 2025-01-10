@@ -1,7 +1,8 @@
-import Link from 'next/link';
-import NavLinks from '@/app/ui/dashboard/nav-links';
-import AcmeLogo from '@/app/ui/acme-logo';
-import { PowerIcon } from '@heroicons/react/24/outline';
+import Link from "next/link";
+import NavLinks from "@/app/ui/dashboard/nav-links";
+import AcmeLogo from "@/app/ui/acme-logo";
+import { PowerIcon } from "@heroicons/react/24/outline";
+import DctLogo from "@/public/logo_dct.svg";
 
 export default function SideNav() {
   return (
@@ -12,6 +13,14 @@ export default function SideNav() {
       >
         <div className="w-32 text-white md:w-40">
           <AcmeLogo />
+          {/* <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+            fill="currentColor"
+            className="h-6 w-6"
+          >
+            DctLogo
+          </svg> */}
         </div>
       </Link>
       <div className="flex grow flex-row justify-between space-x-2 md:flex-col md:space-x-0 md:space-y-2">
