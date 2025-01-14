@@ -6,18 +6,20 @@ export default async function Page() {
   const machines = await Machine.find({}).lean();
 
   return (
-    <section>
-      <div>
-        {machines.length === 0 ? (
-          <p>No machines found</p>
-        ) : (
-          <div>
-            {machines.map((machine: any) => (
-              <div key={machine._id}>{machine.machineSerialNumber}</div>
-            ))}
-          </div>
-        )}
-      </div>
-    </section>
+    <>
+      <section>
+        <div>
+          {machines.length === 0 ? (
+            <p>No machines found</p>
+          ) : (
+            <div>
+              {machines.map((machine: any) => (
+                <div key={machine._id}>{machine.machineSerialNumber}</div>
+              ))}
+            </div>
+          )}
+        </div>
+      </section>
+    </>
   );
 }
