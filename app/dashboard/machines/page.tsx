@@ -1,4 +1,4 @@
-import connectDB from "@/app/query/database";
+import connectDB from "@/app/lib/database";
 import { Machine } from "@/models/Machine";
 
 export default async function Page() {

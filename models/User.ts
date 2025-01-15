@@ -28,7 +28,7 @@ const UserSchema = new Schema(
       type: String,
       enum: {
         values: ["admin", "service", "distributor", "manager"],
-        message: "{Value} is not supprted",
+        message: "{Value} is not supported",
       },
     },
     position: { type: String },
@@ -38,6 +38,10 @@ const UserSchema = new Schema(
     profile: {
       type: String,
       default: "defaultProfile.jpg",
+    },
+    emailVerified: {
+      type: Boolean,
+      default: false,
     },
   },
   {
