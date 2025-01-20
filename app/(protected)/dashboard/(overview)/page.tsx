@@ -1,19 +1,19 @@
-import { lusitana } from "@/app/ui/fonts";
 import CardWrapper from "@/app/ui/dashboard/cards";
 import { CardsSkeleton } from "@/app/ui/skeletons";
 import { Suspense } from "react";
+import { auth } from "@/auth";
 
 // import connectDB from "../query/database";
 
-export default function Page() {
+export default async function Page() {
   //   connectDB();
+  const session = await auth();
 
   return (
     <>
       <main>
-        <h1 className={`${lusitana.className} mb-4 text-xl md:text-2xl`}>
-          Dashboard
-        </h1>
+        <h1 className="mb-4 text-xl md:text-2xl">Dashboard</h1>
+        <p>{JSON.stringify(session)}</p>
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
           {/* <Card title="Collected" value={totalPaidInvoices} type="collected" /> */}
           {/* <Card title="Pending" value={totalPendingInvoices} type="pending" /> */}

@@ -21,8 +21,8 @@ import { FormSuccess } from "@/components/form-success";
 import { login } from "@/actions/login";
 
 export default function LoginForm() {
-  const [error, setError] = useState<string | undefined>();
-  const [success, setSuccess] = useState<string | undefined>();
+  const [error, setError] = useState<string | undefined>("");
+  const [success, setSuccess] = useState<string | undefined>("");
   const [isPending, startTransition] = useTransition();
 
   const form = useForm<z.infer<typeof LoginSchema>>({
@@ -34,13 +34,21 @@ export default function LoginForm() {
   });
 
   const onSubmit = (values: z.infer<typeof LoginSchema>) => {
+    console.log("log values", values);
+
+    // const validatedFields = LoginSchema.safeParse(values);
+
+    // console.log("vali: ", validatedFields);
+
     setError("");
     setSuccess("");
 
     startTransition(() => {
-      login(values).then((data) => {
+      login(values).then((data: any) => {
+        // console.log("login values", values);
         setError(data.error);
         setSuccess(data.success);
+        console.log("login data", data);
       });
     });
   };
@@ -104,6 +112,7 @@ export default function LoginForm() {
                   )}
                 />
               </div>
+              {/* <FormError message="Something went wrong!" /> */}
               <FormError message={error} />
               <FormSuccess message={success} />
               <Button

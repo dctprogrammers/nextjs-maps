@@ -2,7 +2,7 @@
 
 import DCTLogo from "@/components/dct-logo";
 import { useState, useTransition } from "react";
-import * as z from "zod";
+import { z } from "zod";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import {
@@ -21,8 +21,8 @@ import { FormSuccess } from "@/components/form-success";
 import { register } from "@/actions/register";
 
 export default function RegisterForm() {
-  const [error, setError] = useState<string | undefined>();
-  const [success, setSuccess] = useState<string | undefined>();
+  const [error, setError] = useState<string | undefined>("");
+  const [success, setSuccess] = useState<string | undefined>("");
   const [isPending, startTransition] = useTransition();
 
   const form = useForm<z.infer<typeof RegisterSchema>>({
@@ -39,6 +39,7 @@ export default function RegisterForm() {
     setSuccess("");
 
     startTransition(() => {
+      // calling action called 'register' from /actions/register.ts
       register(values).then((data) => {
         setError(data.error);
         setSuccess(data.success);
