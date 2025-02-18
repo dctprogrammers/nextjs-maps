@@ -9,7 +9,7 @@ export interface SessionUserProfile {
   name: string;
   email: string;
   avatar: string;
-  emailVerified: boolean;
+  emailVerified: Date | null;
   role: string;
 }
 
@@ -82,14 +82,16 @@ export const {
     session({ session, token }) {
       const user = token as typeof token & SessionUserProfile;
 
-      if (user) {
+      if (user && session.user) {
         session.user = {
           ...session.user,
           id: user.id,
           name: user.name,
           email: user.email,
           avatar: user.avatar,
-          emailVerified: user.emailVerified,
+          emailVerified: user.emailVerified
+            ? new Date(user.emailVerified)
+            : null,
           role: user.role,
         };
       }

@@ -50,8 +50,8 @@ const UserSchema = new Schema(
     },
     urlname: { type: String, unique: true, index: true, trim: true },
     emailVerified: {
-      type: Boolean,
-      default: false,
+      type: Date,
+      default: null,
     },
     machines: [
       {
