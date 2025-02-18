@@ -57,7 +57,7 @@ export default async function SideNav() {
                     // if (process.env.NODE_ENV === "development") {
                     // await signOut();
                     // } else {
-                    await signOut();
+                    await signOut({ redirectTo: "/" });
                     // }
                   }}
                   name="Sign Out"
