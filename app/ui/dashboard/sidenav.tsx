@@ -54,7 +54,11 @@ export default async function SideNav() {
                 <form
                   action={async () => {
                     "use server";
+                    // if (process.env.NODE_ENV === "development") {
+                    // await signOut();
+                    // } else {
                     await signOut();
+                    // }
                   }}
                   name="Sign Out"
                 >
