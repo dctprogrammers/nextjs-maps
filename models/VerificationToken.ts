@@ -1,4 +1,4 @@
-import mongoose, { Schema, model, models } from "mongoose";
+import { Schema, model, models } from "mongoose";
 
 const VerificationTokenSchema = new Schema(
   {
@@ -20,14 +20,6 @@ const VerificationTokenSchema = new Schema(
     timestamps: true,
   }
 );
-
-// VerificationTokenSchema.methods.greeting = function (token: string) {
-//   return `Hi. Good morning, ${token}`;
-// };
-
-// VerificationTokenSchema.methods.compare = function (token: string) {
-//   return mongoose.model("VerificationToken").findOne({ token });
-// };
 
 export const VerificationToken =
   models.VerificationToken ||

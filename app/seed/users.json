@@ -8,7 +8,7 @@
     "phone": "+420123456789",
     "country": "Czech Republic",
     "description": "",
-    "profile": "a1.jpg",
+    "avatar": "a1.jpg",
     "createdAt": "2025-01-01T00:00:00.000Z",
     "updatedAt": "2025-01-01T00:00:00.000Z"
   },
@@ -21,7 +21,7 @@
     "phone": "+420123456789",
     "country": "Czech Republic",
     "description": "",
-    "profile": "a2.jpg",
+    "avatar": "a2.jpg",
     "createdAt": "2025-01-01T00:00:00.000Z",
     "updatedAt": "2025-01-01T00:00:00.000Z"
   },
@@ -34,7 +34,7 @@
     "phone": "+420123456789",
     "country": "Czech Republic",
     "description": "",
-    "profile": "a3.jpg",
+    "avatar": "a3.jpg",
     "createdAt": "2025-01-01T00:00:00.000Z",
     "updatedAt": "2025-01-01T00:00:00.000Z"
   },
@@ -47,7 +47,7 @@
     "phone": "+420123456789",
     "country": "Czech Republic",
     "description": "",
-    "profile": "a4.jpg",
+    "avatar": "a4.jpg",
     "createdAt": "2025-01-01T00:00:00.000Z",
     "updatedAt": "2025-01-01T00:00:00.000Z"
   },
@@ -60,7 +60,7 @@
     "phone": "+420123456789",
     "country": ["Taiwan", "China"],
     "description": "",
-    "profile": "a5.jpg",
+    "avatar": "a5.jpg",
     "createdAt": "2025-01-01T00:00:00.000Z",
     "updatedAt": "2025-01-01T00:00:00.000Z"
   },
@@ -73,7 +73,7 @@
     "phone": "+420123456789",
     "country": "Hungary",
     "description": "",
-    "profile": "a6.jpg",
+    "avatar": "a6.jpg",
     "createdAt": "2025-01-01T00:00:00.000Z",
     "updatedAt": "2025-01-01T00:00:00.000Z"
   }

@@ -8,7 +8,7 @@ export const metadata = {
   description: "MAPS = Monitoring and Analyzing Processes System",
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: {
   children: React.ReactNode;

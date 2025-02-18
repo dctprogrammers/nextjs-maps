@@ -5,7 +5,7 @@ const MachineSchema = new Schema(
     machineSerialNumber: {
       type: String,
       trim: true,
-      unique: [true, "Serial number already exists"],
+      unique: true,
       required: [true, "Serial number is required"],
     },
     machineType: {
@@ -13,26 +13,25 @@ const MachineSchema = new Schema(
       required: [true, "Machine type is required"],
     },
     machineCycleInfo: {
-      cleanTimeSet: { type: Number },
-      cleanTempSet: { type: Number },
-      rinseTimeSet: { type: Number },
-      rinseTempSet: { type: Number },
-      rinseConductivitySetMin: { type: Number },
-      rinseConductivitySetMax: { type: Number },
-      dryTimeSet: { type: Number },
+      cleanTimeSet: { type: Number, default: null },
+      cleanTempSet: { type: Number, default: null },
+      rinseTimeSet: { type: Number, default: null },
+      rinseTempSet: { type: Number, default: null },
+      rinseConductivitySetMin: { type: Number, default: null },
+      rinseConductivitySetMax: { type: Number, default: null },
+      dryTimeSet: { type: Number, default: null },
     },
     machineAlarmLog: [
       {
         message: { type: String },
-        alarmCreated: { type: Date },
-        alarmSolved: { type: Date },
-      },
-      {
-        message: { type: String },
-        alarmCreated: { type: Date },
-        alarmSolved: { type: Date },
+        alarmCreated: { type: Date, default: Date.now },
+        alarmSolved: { type: Date, default: null },
       },
     ],
+    contact: {
+      type: Schema.Types.ObjectId,
+      ref: "User",
+    },
   },
   {
     timestamps: true,

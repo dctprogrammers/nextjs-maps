@@ -29,6 +29,7 @@ const OrganizationSchema = new Schema(
       zipcode: { type: String },
     },
     logo: { type: String },
+    urlTitle: { type: String },
   },
   {
     timestamps: true,

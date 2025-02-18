@@ -1,7 +1,32 @@
-import NextAuth from "next-auth";
+import NextAuth, { CredentialsSignin } from "next-auth";
 import Credentials from "next-auth/providers/credentials";
-import { z } from "zod";
-import { getUserByEmail } from "./query/route";
+import bcrypt from "bcryptjs";
+import { LoginSchema } from "./schemas";
+import { User } from "./models/User";
+
+export interface SessionUserProfile {
+  id: string;
+  name: string;
+  email: string;
+  avatar: string;
+  emailVerified: boolean;
+  role: string;
+}
+
+declare module "next-auth" {
+  interface Session {
+    user: SessionUserProfile;
+  }
+}
+
+class CustomError extends CredentialsSignin {
+  constructor(message: string) {
+    super(message);
+    this.message = message;
+  }
+
+  // code = "custom_error";
+}
 
 export const {
   handlers: { GET, POST },
@@ -18,47 +43,60 @@ export const {
         email: {},
         password: {},
       },
-      // async authorize(credentials) {
-      //   const { email, password } = credentials;
-
-      //   if (email === "maria@mail.com" && password === "maria")
-      //     return {
-      //       id: "123",
-      //       name: "Maria",
-      //       email: "maria@mail.com",
-      //     };
-
-      //   return null;
-      // },
       async authorize(credentials) {
-        // const parsedCredentials = z
-        //   .object({ email: z.string().email(), password: z.string().min(6) })
-        //   .safeParse(credentials);
+        const result = LoginSchema.safeParse({
+          email: credentials.email,
+          password: credentials.password,
+        });
 
-        // console.log("parsed", parsedCredentials);
+        if (!result.success)
+          throw new CustomError("Please provide a valid email & password!");
 
-        // if (!parsedCredentials.success)
-        //   return console.log(parsedCredentials.error.formErrors.fieldErrors);
+        const { email, password } = result.data;
 
-        //   const { email, password } = parsedCredentials.data;
-        //   const user = await getUserByEmail(email);
-        //   // if (!user) return null;
-        //   // if (user) {
-        //   //   const passwordsMatch = await bcrypt.compare(
-        //   //     password,
-        //   //     user?.password
-        //   //   );
-        //   //   if (passwordsMatch) return user;
-        //   // } else return null;
-        //   // console.log("user", user);
-        //   return user;
+        const user = await User.findOne({ email });
 
-        // console.log("Invalid credentials");
+        const comparedPassword = await bcrypt.compare(password, user.password);
 
-        return null;
+        if (!comparedPassword) throw new CustomError("Password mismatched!");
+
+        return {
+          id: user?._id.toString(),
+          name: user?.name,
+          email: user?.email,
+          avatar: user?.avatar,
+          // avatar: user?.avatar || "default value",
+          emailVerified: user?.emailVerified,
+          role: user?.role,
+        };
+        // return null;
       },
     }),
   ],
+  callbacks: {
+    jwt({ token, user }) {
+      if (user) token = { ...token, ...user };
+
+      return token;
+    },
+    session({ session, token }) {
+      const user = token as typeof token & SessionUserProfile;
+
+      if (user) {
+        session.user = {
+          ...session.user,
+          id: user.id,
+          name: user.name,
+          email: user.email,
+          avatar: user.avatar,
+          emailVerified: user.emailVerified,
+          role: user.role,
+        };
+      }
+
+      return session;
+    },
+  },
 });
 
 // import bcrypt from "bcryptjs";

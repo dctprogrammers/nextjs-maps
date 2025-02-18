@@ -35,7 +35,7 @@ export default function Page() {
             className="hidden md:block rounded-xl"
             alt="Screenshots of the project showing desktop version"
             priority
-          ></Image>
+          />
           {/* <Image
             src="/hero-mobile.png"
             width={560}
