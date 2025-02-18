@@ -16,7 +16,13 @@ import { redirect } from "next/navigation";
 export default async function SideNav() {
   const session = await auth();
 
-  if (!session) return redirect("/");
+  if (!session) {
+    if (process.env.NODE_ENV === "development") {
+      return redirect("/");
+    } else {
+      return redirect("https://nextjs-maps-red.vercel.app/");
+    }
+  }
 
   const firstChar = session.user.name.length > 0 ? session.user.name[0] : "A";
 
@@ -54,11 +60,13 @@ export default async function SideNav() {
                 <form
                   action={async () => {
                     "use server";
-                    // if (process.env.NODE_ENV === "development") {
-                    // await signOut();
-                    // } else {
-                    await signOut({ redirectTo: "/" });
-                    // }
+                    if (process.env.NODE_ENV === "development") {
+                      await signOut();
+                    } else {
+                      await signOut({
+                        redirectTo: "https://nextjs-maps-red.vercel.app/",
+                      });
+                    }
                   }}
                   name="Sign Out"
                 >
